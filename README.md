@@ -15,7 +15,7 @@ Este proyecto incluye un Smart Contract desarrollado en Solidity que permite ges
 
 ## Instalación
 Clona este repositorio y navega a la carpeta del proyecto.
-```bash
+
 git clone https://github.com/tu-usuario/tu-repositorio.git
 cd tu-repositorio
 
