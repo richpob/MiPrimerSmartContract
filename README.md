@@ -82,16 +82,86 @@ contract DataStorage {
     }
 }
 ```
-### Contrato Primario
+## Contrato Primario
 Primero, definamos nuestro contrato principal y luego el contrato con el que se interactuará. Estos contratos son teórico y para un caso real se debe ajustar según las necesidades y el entorno de implementación específico.
+### Código fuente
+```
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.0;
 
-### Contrato Secundario
+// Interfaz del contrato secundario para interactuar con él
+interface SecondaryContractInterface {
+    function addData(uint _data) external;
+    function getData() external view returns (uint);
+}
+
+contract PrimaryContract {
+    address owner;
+    string public textData;
+    uint public numberData;
+    bool public booleanData;
+    address public secondaryContractAddress = address(0x8644d45B3074183fBdA24A044b5EA072B4aB1330); // Supongamos esta es la dirección del contrato secundario
+
+    constructor() {
+        owner = msg.sender;
+    }
+
+    modifier onlyOwner() {
+        require(msg.sender == owner, "No eres el propietario");
+        _;
+    }
+
+    // Función para establecer la dirección del contrato secundario
+    function setSecondaryContractAddress(address _address) public onlyOwner {
+        secondaryContractAddress = _address;
+    }
+
+    // Funciones para interactuar con el contrato secundario
+    function addToSecondaryContract(uint _data) public onlyOwner {
+        SecondaryContractInterface(secondaryContractAddress).addData(_data);
+    }
+
+    function getFromSecondaryContract() public view returns (uint) {
+        return SecondaryContractInterface(secondaryContractAddress).getData();
+    }
+
+    // Funciones para manejar datos dentro de este contrato
+    function addData(string memory _text, uint _number, bool _boolean) public onlyOwner {
+        textData = _text;
+        numberData = _number;
+        booleanData = _boolean;
+    }
+
+    function readData() public view returns (string memory, uint, bool) {
+        return (textData, numberData, booleanData);
+    }
+}
+```
+## Contrato Secundario
 Este contrato PrimaryContract permite al propietario establecer y leer tres tipos de datos: texto, número y booleano. Además, tiene la capacidad de interactuar con otro contrato SecondaryContract (del cual solo se define la interfaz aquí) para agregar y consultar datos numéricos. La función onlyOwner asegura que solo el propietario pueda agregar datos y establecer la dirección del contrato secundario.
 
 Este contrato secundario es bastante simple y solo maneja un dato numérico para ilustrar la interacción entre contratos.
 
 Recuerde desplegar primero el SecondaryContract, obtener su dirección y luego establecerla en el PrimaryContract usando la función setSecondaryContractAddress para permitir la interacción entre ellos. Este ejemplo es básico y se puede expandir o modificar para cumplir con requisitos más específicos o complejos.
 
+### Codigo Fuente
+```
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.0;
+
+contract SecondaryContract {
+    uint public data;
+
+    function addData(uint _data) external {
+        data = _data;
+    }
+
+    function getData() external view returns (uint) {
+        return data;
+    }
+}
+
+```
 ## URL y Resultados de deploy de los contratos
 ### Deploy Primer Contrato
 #### URL TX
