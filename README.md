@@ -64,6 +64,11 @@ https://sepolia.etherscan.io/address/0x702bf601d77516cc31db66b278f3dcdf7ddaf279#
 
 ### Deploy Contrato Primario
 
+https://sepolia.etherscan.io/tx/0x4c63955e8a082508ff69d6bf172808d1bf035129d5de15fe8d91b7511e7eea35
+
+https://sepolia.etherscan.io/address/0x0e9cfb29fa7f39b1d8a6d97edd8c7dae3f4b353d
+
+
 
 
 
