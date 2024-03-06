@@ -82,6 +82,39 @@ contract DataStorage {
     }
 }
 ```
+El código fuente proporcionado en Solidity define un contrato inteligente llamado DataStorage junto con una interfaz IDataStorage. Aquí está la explicación del código:
+
+Licencia y Versión de Solidity
+// SPDX-License-Identifier: MIT: Esta línea indica que el código está licenciado bajo la Licencia MIT, permitiendo su uso, modificación y distribución.
+pragma solidity ^0.8.7;: Especifica que el contrato se debe compilar con la versión 0.8.7 de Solidity o una versión posterior compatible hasta la versión 0.9.0.
+Interfaz IDataStorage
+La interfaz IDataStorage declara cuatro funciones que serán implementadas por el contrato DataStorage:
+
+setNumericData(uint _numericData): Para establecer datos numéricos.
+setTextData(string calldata _textData): Para establecer datos de texto.
+setBooleanData(bool _booleanData): Para establecer datos booleanos.
+getAllData(): Para obtener todos los datos almacenados.
+Contrato DataStorage
+Variables de Estado:
+
+address private owner: Dirección del propietario del contrato.
+uint public numericData: Almacena datos numéricos.
+string public textData: Almacena datos de texto.
+bool public booleanData: Almacena un valor booleano.
+Constructor:
+
+Establece el owner del contrato como el creador del mismo usando msg.sender.
+Modifier onlyOwner:
+
+Restringe el acceso a ciertas funciones solo al propietario del contrato.
+Funciones:
+
+changeOwner(address newOwner): Permite al propietario actual transferir la propiedad del contrato a un nuevo propietario.
+setNumericData, setTextData, y setBooleanData: Permiten al propietario modificar los valores de numericData, textData, y booleanData, respectivamente.
+getAllData(): Devuelve los valores de numericData, textData, y booleanData.
+Este contrato permite al propietario almacenar y recuperar tres tipos de datos (numérico, de texto y booleano) de forma segura, garantizando que solo el propietario pueda modificar los datos almacenados. La función getAllData proporciona una forma conveniente de acceder a todos los datos almacenados en el contrato en una sola llamada.
+
+
 ## Contrato Primario
 Primero, definamos nuestro contrato principal y luego el contrato con el que se interactuará. Estos contratos son teórico y para un caso real se debe ajustar según las necesidades y el entorno de implementación específico.
 ### Código fuente
@@ -137,6 +170,35 @@ contract PrimaryContract {
     }
 }
 ```
+El código Solidity proporcionado define dos contratos: una interfaz llamada SecondaryContractInterface y un contrato principal llamado PrimaryContract. Aquí está el desglose del código y su funcionalidad:
+
+SPDX-License-Identifier: MIT
+Esta línea indica que el contrato se publica bajo la licencia MIT, una licencia de software libre que permite reutilización, modificación y distribución.
+
+pragma solidity ^0.8.0;
+Establece que el contrato se compila con la versión 0.8.0 de Solidity o una versión compatible posterior.
+
+Interfaz SecondaryContractInterface
+Define una interfaz para interactuar con otro contrato (secundario) que implementa estas funciones. La interfaz tiene dos funciones:
+
+addData(uint _data) external; para agregar datos.
+getData() external view returns (uint); para obtener datos.
+Contrato PrimaryContract
+Variables de Estado: Incluye un propietario (owner), datos de texto (textData), datos numéricos (numberData), y un valor booleano (booleanData). Además, contiene la dirección de un contrato secundario (secondaryContractAddress) con el que interactuará.
+
+Constructor: Establece el creador del contrato como el propietario (owner) al desplegar el contrato.
+
+Modifier onlyOwner(): Asegura que solo el propietario del contrato pueda ejecutar las funciones marcadas con este modificador.
+
+Función setSecondaryContractAddress: Permite al propietario establecer la dirección del contrato secundario.
+
+Interacción con el Contrato Secundario: Las funciones addToSecondaryContract y getFromSecondaryContract permiten agregar y obtener datos del contrato secundario, respectivamente. Esto se logra a través de la interfaz SecondaryContractInterface.
+
+Manejo de Datos Internos: Las funciones addData y readData permiten al propietario agregar y leer datos internos del contrato, respectivamente. addData acepta texto, un número y un valor booleano, mientras que readData devuelve estos valores.
+
+Este contrato demuestra cómo interactuar con otro contrato (a través de una interfaz), la importancia de la propiedad del contrato, y cómo manejar diferentes tipos de datos dentro de un contrato de Solidity.
+
+
 ## Contrato Secundario
 Este contrato PrimaryContract permite al propietario establecer y leer tres tipos de datos: texto, número y booleano. Además, tiene la capacidad de interactuar con otro contrato SecondaryContract (del cual solo se define la interfaz aquí) para agregar y consultar datos numéricos. La función onlyOwner asegura que solo el propietario pueda agregar datos y establecer la dirección del contrato secundario.
 
@@ -162,6 +224,22 @@ contract SecondaryContract {
 }
 
 ```
+Este código Solidity define un contrato inteligente simple denominado SecondaryContract. Vamos a desglosarlo:
+
+// SPDX-License-Identifier: MIT: Esta es una declaración de licencia que especifica que el código se distribuye bajo la Licencia MIT, una licencia de software libre permisiva que permite la reutilización dentro de software propietario bajo los términos definidos por dicha licencia.
+
+pragma solidity ^0.8.0;: Esta línea especifica la versión del compilador de Solidity que se debe utilizar para compilar este contrato. El símbolo ^ indica que el contrato es compatible con la versión 0.8.0 y todas las versiones menores de 0.9.0.
+
+contract SecondaryContract { ... }: Define un nuevo contrato llamado SecondaryContract.
+
+uint public data;: Declara una variable de estado data de tipo uint (entero sin signo de 256 bits). La palabra clave public hace que Solidity genere automáticamente una función getter para esta variable, permitiendo que su valor sea leído desde fuera del contrato.
+
+function addData(uint _data) external { ... }: Define una función addData que permite a usuarios externos al contrato (es decir, no contratos o llamadas internas) establecer el valor de la variable data. La función toma un argumento _data y actualiza el valor de la variable de estado data con este valor.
+
+function getData() external view returns (uint) { ... }: Define una función getData que permite a usuarios externos consultar el valor actual de la variable data. La palabra clave view indica que esta función no modifica el estado del contrato, y returns (uint) especifica que devuelve un valor de tipo uint.
+
+Este contrato permite almacenar y recuperar un valor entero, ofreciendo una interfaz simple para interactuar con la variable data. 
+
 ## URL y Resultados de deploy de los contratos
 ### Deploy Primer Contrato
 #### URL TX
