@@ -10,8 +10,8 @@ Este proyecto incluye un Smart Contract desarrollado en Solidity que permite ges
 
 ## Requisitos
 - [Node.js](https://nodejs.org/en/)
-- [Truffle](https://www.trufflesuite.com/)
-- [Ganache](https://www.trufflesuite.com/ganache) para un entorno de desarrollo local de Ethereum
+- [Remix](https://remix.ethereum.org/)
+
 
 ## Instalación
 Clona este repositorio y navega a la carpeta del proyecto.
