@@ -12,7 +12,7 @@ contract PrimaryContract {
     string public textData;
     uint public numberData;
     bool public booleanData;
-    address public secondaryContractAddress = address(0); // Supongamos esta es la dirección del contrato secundario
+    address public secondaryContractAddress = address(0xF0A31626fEE3b4e54e02dbE0a29B66fDcAB4bbf0); // Supongamos esta es la dirección del contrato secundario
 
     constructor() {
         owner = msg.sender;

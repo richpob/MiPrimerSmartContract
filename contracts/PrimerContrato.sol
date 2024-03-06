@@ -1,5 +1,12 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.0;
+pragma solidity ^0.8.7;
+
+interface IDataStorage {
+    function setNumericData(uint _numericData) external;
+    function setTextData(string calldata _textData) external;
+    function setBooleanData(bool _booleanData) external;
+    function getAllData() external view returns (uint, string memory, bool);
+}
 
 contract DataStorage {
     address private owner;
@@ -39,3 +46,5 @@ contract DataStorage {
         return (numericData, textData, booleanData);
     }
 }
+
+
