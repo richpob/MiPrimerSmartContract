@@ -310,4 +310,8 @@ Ahora que tienes todo configurado, puedes comenzar a trabajar en tu proyecto de 
 Desarrollar en Remix: Escribe y prueba tu contrato inteligente en Remix.
 Sincronizar con GitHub: Utiliza GitHub Desktop para hacer "commit" de tus cambios y sincronizarlos con tu repositorio en línea.
 Editar con Visual Studio Code: Para cambios más significativos o para trabajar en otros aspectos de tu proyecto, usa Visual Studio Code.
-Este flujo de trabajo integra el desarrollo de contratos inteligentes con un poderoso control de versiones y un editor flexible, facilitando la colaboración y el seguimiento de cambios en proyectos de blockchain
+Este flujo de trabajo integra el desarrollo de contratos inteligentes con un poderoso control de versiones y un editor flexible, facilitando la colaboración y el seguimiento de cambios en proyectos de blockchain.
+
+### Como integrar Remix con un Repo de GitHub
+Les comparto video usado para realizar esta integración : https://www.youtube.com/watch?v=3Qinu26UmZs&t=267s
+
