@@ -31,7 +31,57 @@ Este contrato y su interfaz cumplen con los requisitos básicos de manipulación
 
 ##Contrato Primario y Secudario
 Para cumplir con los requisitos especificados, podemos diseñar un contrato inteligente en Solidity que maneje diferentes tipos de datos y que incluya una función de validación para asegurarse de que solo el propietario (owner) pueda agregar datos. Además, incluiremos un mecanismo para interactuar con otro contrato inteligente mediante su interfaz.
+### Código fuente
+```
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.7;
 
+interface IDataStorage {
+    function setNumericData(uint _numericData) external;
+    function setTextData(string calldata _textData) external;
+    function setBooleanData(bool _booleanData) external;
+    function getAllData() external view returns (uint, string memory, bool);
+}
+
+contract DataStorage {
+    address private owner;
+    uint public numericData;
+    string public textData;
+    bool public booleanData;
+
+    constructor() {
+        owner = msg.sender; // El creador del contrato es el propietario.
+    }
+
+    modifier onlyOwner() {
+        require(msg.sender == owner, "Solo el propietario puede realizar esta accion.");
+        _;
+    }
+
+    // Función para modificar el propietario.
+    function changeOwner(address newOwner) public onlyOwner {
+        owner = newOwner;
+    }
+
+    // Funciones para interactuar con los datos.
+    function setNumericData(uint _numericData) public onlyOwner {
+        numericData = _numericData;
+    }
+
+    function setTextData(string memory _textData) public onlyOwner {
+        textData = _textData;
+    }
+
+    function setBooleanData(bool _booleanData) public onlyOwner {
+        booleanData = _booleanData;
+    }
+
+    // Función para consultar todos los datos juntos.
+    function getAllData() public view returns (uint, string memory, bool) {
+        return (numericData, textData, booleanData);
+    }
+}
+```
 ### Contrato Primario
 Primero, definamos nuestro contrato principal y luego el contrato con el que se interactuará. Estos contratos son teórico y para un caso real se debe ajustar según las necesidades y el entorno de implementación específico.
 
