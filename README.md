@@ -56,10 +56,10 @@ https://sepolia.etherscan.io/address/0xa25c59b19409128c6cd413da7920fd32b5fa736c#
 
 ### Deploy Contrato secundario
 #### URL TX
-https://sepolia.etherscan.io/tx/0x317d22dcfd387ecd45c82fa71a050e8feece8272b390dbb88e4d23470bb8dc2f
+https://sepolia.etherscan.io/tx/0xd1f120d83243a8270c6e1140f65aca25035113e6207fc5f3c859aaefd4f649eb
 
 #### URL SmartContract
-https://sepolia.etherscan.io/address/0x702bf601d77516cc31db66b278f3dcdf7ddaf279
+https://sepolia.etherscan.io/address/0xf8ab70fa2af9a99428d64c2f143e2683f9bdaac1
 
 #### Verify and Publish 
 https://sepolia.etherscan.io/address/0x702bf601d77516cc31db66b278f3dcdf7ddaf279#code
