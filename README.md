@@ -279,6 +279,38 @@ https://sepolia.etherscan.io/address/0x0e43cbc1e09581fd89cf8d8e5e42e54b826c60ae
 #### Verify and Publish 
 https://sepolia.etherscan.io/address/0x0e43cbc1e09581fd89cf8d8e5e42e54b826c60ae#code
 
+##Entorno de Desarrollo propuesto y usado en este proyecto
+Para configurar un entorno de desarrollo utilizando Remix, GitHub, GitHub Desktop, y Visual Studio Code como editor, puedes seguir estos pasos generales:
 
+###Paso 1: Configurar Remix IDE
+Remix es un entorno de desarrollo integrado (IDE) basado en la web para el desarrollo de contratos inteligentes en Ethereum. No requiere instalación.
 
+Acceder a Remix: Ve a Remix IDE en tu navegador.
+Crear/Abrir Proyecto: Puedes comenzar un nuevo proyecto o importar uno existente usando la opción "Load from" en la sección "File explorers".
 
+###Paso 2: Configurar GitHub
+GitHub es una plataforma de hospedaje de código para control de versiones y colaboración.
+Crear una Cuenta: Si aún no tienes una, crea una cuenta en GitHub.
+Crear un Repositorio: En tu perfil de GitHub, selecciona "New repository" para crear uno nuevo y sigue las instrucciones.
+
+###Paso 3: Configurar GitHub Desktop
+GitHub Desktop es una aplicación que simplifica el uso de Git y GitHub en tu computadora.
+
+Descargar e Instalar: Descarga GitHub Desktop desde su sitio web e instálalo.
+Conectar con GitHub: Inicia sesión con tu cuenta de GitHub.
+Clonar el Repositorio: Desde GitHub Desktop, selecciona "Clone a repository from the Internet..." y elige el repositorio que creaste en GitHub.
+
+###Paso 4: Configurar Visual Studio Code
+Visual Studio Code es un editor de código fuente ligero pero potente.
+
+Descargar e Instalar: Descarga Visual Studio Code desde su sitio web e instálalo.
+Abrir Proyecto: Abre Visual Studio Code y utiliza "File" > "Open Folder..." para abrir el directorio del repositorio clonado con GitHub Desktop.
+Instalar Extensiones: Para mejorar tu experiencia de desarrollo, instala extensiones como "Solidity" para soporte de lenguaje Solidity.
+
+###Paso 5: Trabajar con el Proyecto
+Ahora que tienes todo configurado, puedes comenzar a trabajar en tu proyecto de contrato inteligente en Remix, guardar tus cambios en archivos locales, y utilizar Visual Studio Code para editarlos.
+
+Desarrollar en Remix: Escribe y prueba tu contrato inteligente en Remix.
+Sincronizar con GitHub: Utiliza GitHub Desktop para hacer "commit" de tus cambios y sincronizarlos con tu repositorio en línea.
+Editar con Visual Studio Code: Para cambios más significativos o para trabajar en otros aspectos de tu proyecto, usa Visual Studio Code.
+Este flujo de trabajo integra el desarrollo de contratos inteligentes con un poderoso control de versiones y un editor flexible, facilitando la colaboración y el seguimiento de cambios en proyectos de blockchain
