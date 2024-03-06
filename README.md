@@ -117,6 +117,8 @@ Este contrato permite al propietario almacenar y recuperar tres tipos de datos (
 
 ## Contrato Primario
 Primero, definamos nuestro contrato principal y luego el contrato con el que se interactuará. Estos contratos son teórico y para un caso real se debe ajustar según las necesidades y el entorno de implementación específico.
+Este contrato PrimaryContract permite al propietario establecer y leer tres tipos de datos: texto, número y booleano. Además, tiene la capacidad de interactuar con otro contrato SecondaryContract (del cual solo se define la interfaz aquí) para agregar y consultar datos numéricos. La función onlyOwner asegura que solo el propietario pueda agregar datos y establecer la dirección del contrato secundario.
+
 ### Código fuente
 ```
 // SPDX-License-Identifier: MIT
@@ -200,8 +202,6 @@ Este contrato demuestra cómo interactuar con otro contrato (a través de una in
 
 
 ## Contrato Secundario
-Este contrato PrimaryContract permite al propietario establecer y leer tres tipos de datos: texto, número y booleano. Además, tiene la capacidad de interactuar con otro contrato SecondaryContract (del cual solo se define la interfaz aquí) para agregar y consultar datos numéricos. La función onlyOwner asegura que solo el propietario pueda agregar datos y establecer la dirección del contrato secundario.
-
 Este contrato secundario es bastante simple y solo maneja un dato numérico para ilustrar la interacción entre contratos.
 
 Recuerde desplegar primero el SecondaryContract, obtener su dirección y luego establecerla en el PrimaryContract usando la función setSecondaryContractAddress para permitir la interacción entre ellos. Este ejemplo es básico y se puede expandir o modificar para cumplir con requisitos más específicos o complejos.
