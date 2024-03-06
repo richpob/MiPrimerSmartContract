@@ -240,6 +240,13 @@ function getData() external view returns (uint) { ... }: Define una función get
 
 Este contrato permite almacenar y recuperar un valor entero, ofreciendo una interfaz simple para interactuar con la variable data. 
 
+## Recursos Adicionales
+Para estos ejercicios se han usado 2 cuentas de la Testnet Sepolia, que tiene fondos obtenidos con su correspondiente Faucet
+### Cuentas SepoliaETH
+Account 1: 0x8644d45B3074183fBdA24A044b5EA072B4aB1330
+Account 2: 0xF0A31626fEE3b4e54e02dbE0a29B66fDcAB4bbf0
+
+
 ## URL y Resultados de deploy de los contratos
 ### Deploy Primer Contrato
 #### URL TX
