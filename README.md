@@ -44,6 +44,12 @@ Recuerde desplegar primero el SecondaryContract, obtener su dirección y luego e
 
 ## URL y Resultados de deploy de los contratos
 ### Deploy Primer Contrato
+#### URL TX
+https://sepolia.etherscan.io/tx/0x06b8bf0ffedc0b11f8ab6a0b97193a4c07f546ffb50c662264fa018fe5afb63a
+
+#### URL SmartContract
+https://sepolia.etherscan.io/address/0xa25c59b19409128c6cd413da7920fd32b5fa736c
+
 
 ### Deploy Contrato secundario
 
