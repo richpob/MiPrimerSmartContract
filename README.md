@@ -16,8 +16,8 @@ Este proyecto incluye un Smart Contract desarrollado en Solidity que permite ges
 ## Instalación
 Clona este repositorio y navega a la carpeta del proyecto.
 
-git clone https://github.com/tu-usuario/tu-repositorio.git
-cd tu-repositorio
+git clone https://github.com/richpob/MiPrimerSmartContract
+cd MiPrimerSmartContract
 
 ## Primer contrato
 Para esta solicitud, crearemos un contrato inteligente en Solidity que cumpla con los requisitos especificados. Este contrato permitirá al propietario (owner) introducir y leer datos de diferentes tipos, incluidos números, texto y valores booleanos. Además, se definirá una interfaz simple para interactuar con el contrato y se incluirán algunas funciones
