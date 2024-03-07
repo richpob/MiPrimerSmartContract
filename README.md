@@ -281,6 +281,10 @@ https://sepolia.etherscan.io/address/0x0e43cbc1e09581fd89cf8d8e5e42e54b826c60ae#
 
 ## Entorno de Desarrollo propuesto y usado en este proyecto
 Para configurar un entorno de desarrollo utilizando Remix, GitHub, GitHub Desktop, y Visual Studio Code como editor, puedes seguir estos pasos generales:
+### Pantalla de Renix integrada a Github con Deplu de Primer Contrato y funciones disponible para ejecutar
+
+![image](https://github.com/richpob/MiPrimerSmartContract/assets/133718913/53deff58-e75c-4dfa-9b28-a8043b9cc2dc)
+
 
 ### Paso 1: Configurar Remix IDE
 Remix es un entorno de desarrollo integrado (IDE) basado en la web para el desarrollo de contratos inteligentes en Ethereum. No requiere instalación.
